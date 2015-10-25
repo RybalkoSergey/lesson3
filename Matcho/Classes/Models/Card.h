@@ -6,6 +6,7 @@
 //  Copyright © 2015 geekub. All rights reserved.
 //
 
+@import UIKit;
 @import Foundation;
 
 @interface Card : NSObject
@@ -15,6 +16,8 @@
 @property (nonatomic, getter = isChosen) BOOL chosen;
 @property (nonatomic, getter = isMatched) BOOL matched;
 
+
 - (int)match:(NSArray *)otherCards;
+- (UIColor *)getColor;
 
 @end

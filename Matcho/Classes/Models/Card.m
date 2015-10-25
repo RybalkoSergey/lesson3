@@ -26,4 +26,12 @@
     return score;
 }
 
+- (UIColor *)getColor {
+    if ([self.contents hasSuffix:@"♣"] || [self.contents hasSuffix:@"♠"]) {
+        return [UIColor blackColor];
+    } else {
+        return [UIColor redColor];
+    }
+}
+
 @end

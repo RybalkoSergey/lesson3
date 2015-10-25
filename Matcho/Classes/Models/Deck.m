@@ -38,9 +38,19 @@
 	}
 }
 
+- (BOOL)deckIsEmpty {
+    return (_cards.count < 1);
+}
+
 - (Card *)drawRandomCard {
-	NSInteger randomCard = arc4random() % [self.cards count];
-	return self.cards[randomCard];
+    Card *randomCard;
+    if (self.cards.count > 0) {
+        NSInteger randomCardIndex = arc4random() % [self.cards count];
+        randomCard = self.cards[randomCardIndex];
+        [self.cards removeObject:randomCard];
+    }
+	
+	return randomCard;
 }
 
 @end
